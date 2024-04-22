@@ -3,22 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
     <title>meteo-application-forcast</title>
   </head>
   <body>
-    <header>
-      <form>
-        <input type="text" placeholder="Type a city" />
-        <input type="submit" value="Search" />
-      </form>
-      <h1>New York</h1>
-    </header>
-    <main>
-      <div>last updated: Thursday 15:06</div>
-      <div>mist</div>
-      <div>🌦 13°C | °F</div>
-      <div>Humidity: 94%</div>
-      <div>Wind: 2km/h</div>
-    </main>
+    <div class="container">
+      <header>
+        <form>
+          <input
+            type="text"
+            placeholder="Type a city"
+            class="meteo-input-text"
+          />
+          <input type="submit" value="Search" class="meteo-input-submit" />
+        </form>
+        <h1>New York</h1>
+      </header>
+      <main>
+        <div class="update">last updated: Thursday 15:06</div>
+        <div class="weather">Mist</div>
+        <div class="meteo-conditions">
+          <div class="temperature">
+            <span class="icon">🌦</span>
+            <span class="figure">13</span>
+            <span class="measures">
+              <span class="metric">°C |</span>
+              <span class="imperial">°F</span>
+            </span>
+          </div>
+          <div class="conditions">
+            <div>Humidity: 94 %</div>
+            <div>Wind: 2 km/h</div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer>
+      <a
+        href="https://github.com/PamelaYanou/Meteo-application-forecast"
+        class="copyright"
+        >Open-source code</a
+      >
+      by Pamela Yanou
+    </footer>
   </body>
 </html>
