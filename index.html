@@ -17,33 +17,38 @@
             class="meteo-input-text"
             id="input-text"
           />
-          <input type="submit" value="Search" class="meteo-input-submit" id="meteo-input-submit"/>
+          <input
+            type="submit"
+            value="Search"
+            class="meteo-input-submit"
+            id="meteo-input-submit"
+          />
         </form>
-         </header>
+      </header>
       <main>
         <div class="meteo-flex">
-            <div class="meteo-city">
-        <h1 id="city">New York</h1>
-        <div class="update">
-          Thursday 15:06, <div class="weather">Mist </div>
-        </div>
-</div>
-        <div class="meteo-conditions">
-          <span class="icon">🌦</span>
-          <div class="temperature">
-            <span class="figure">13</span>
-            <span class="measures">
-              <span class="metric">°C |</span>
-              <span class="imperial">°F</span>
-            </span>
+          <div class="meteo-city">
+            <h1 id="city"></h1>
+            <div class="update">
+              <span id="time"></span>
+              <div class="weather" id="weather"></div>
+            </div>
           </div>
-          <div class="conditions">
-            <div>Humidity: 94 %</div>
-            <div>Wind: 2 km/h</div>
+          <div class="meteo-conditions">
+            <span class="icon">🌦</span>
+            <div class="temperature">
+              <span class="figure" id="figure"></span>
+              <span class="measures">
+                <span class="metric">°C |</span>
+                <span class="imperial">°F</span>
+              </span>
+            </div>
+            <div class="conditions">
+              <div>Humidity: <strong id="humidity"></strong></div>
+              <div>Wind: <strong id="wind"></strong></div>
+            </div>
           </div>
         </div>
-        </div>
-            </main>
         <div class="meteo-forecast">
           <div>Thur</div>
           <div class="icon-forecast">🌦</div>
