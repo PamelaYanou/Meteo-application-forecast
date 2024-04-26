@@ -22,6 +22,8 @@ function updateWeather(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 }
 let currentDateELement = document.querySelector("#time");
 let currentDate = new Date();
@@ -52,5 +54,12 @@ function formatDate(date) {
   let formattedDay = days[day];
   return `${formattedDay} ${hours}:${minutes}`;
 }
-
-findCity("Paris");
+findCity("Berlin");
+let forecast = document.querySelector("#meteo-forecast");
+forecast.innerHTML = `
+<div class="meteo-day">Thur</div>
+          <div class="meteo-icon">🌤️</div>
+          <div>
+            <span class="meteo-max">18°</span>
+            <span class="meteo-min">12°</span>
+          </div>`;
