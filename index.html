@@ -4,24 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <title>meteo-application-forcast</title>
   </head>
   <body>
     <div class="container">
       <header>
-        <form>
+        <form id="search-form">
           <input
             type="text"
             placeholder="Type a city"
             class="meteo-input-text"
+            id="input-text"
           />
-          <input type="submit" value="Search" class="meteo-input-submit" />
+          <input type="submit" value="Search" class="meteo-input-submit" id="meteo-input-submit"/>
         </form>
          </header>
       <main>
         <div class="meteo-flex">
             <div class="meteo-city">
-        <h1>New York</h1>
+        <h1 id="city">New York</h1>
         <div class="update">
           Thursday 15:06, <div class="weather">Mist </div>
         </div>
@@ -60,5 +62,6 @@
       >
       by Pamela Yanou
     </footer>
+    <script src="src/index.js"></script>
   </body>
 </html>
