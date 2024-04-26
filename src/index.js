@@ -55,11 +55,24 @@ function formatDate(date) {
   return `${formattedDay} ${hours}:${minutes}`;
 }
 findCity("Berlin");
-let forecast = document.querySelector("#meteo-forecast");
-forecast.innerHTML = `
-<div class="meteo-day">Thur</div>
+
+function showForecast() {
+  let forecastElement = document.querySelector("#meteo-forecast");
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHTML = " ";
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+<div class="meteo-day">${day}</div>
           <div class="meteo-icon">🌤️</div>
-          <div>
-            <span class="meteo-max">18°</span>
-            <span class="meteo-min">12°</span>
+                   <div class="range">
+            <span class="meteo-max">18° </span>
+            <span class="meteo-min"> 12°</span>
           </div>`;
+  });
+  forecastElement.innerHTML = forecastHTML;
+}
+
+showForecast();
