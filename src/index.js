@@ -57,22 +57,36 @@ function formatDate(date) {
 }
 findCity("Berlin");
 
+function updateDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+
+  let days = ["sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[date.getDay()];
+}
+
 function showForecast(response) {
   console.log(response.data);
   let forecastElement = document.querySelector("#meteo-forecast");
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+
   let forecastHTML = " ";
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-<div class="meteo-day">${day}</div>
-          <div class="meteo-icon">🌤️</div>
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
+<div class="meteo-day">${updateDate(day.time)}</div>
+          <div >
+          <img src="${day.condition.icon_url}" class="meteo-icon"/></div>
                    <div class="range">
-            <span class="meteo-max">18° </span>
-            <span class="meteo-min"> 12°</span>
-          </div>`;
+            <span class="meteo-max">${Math.round(
+              day.temperature.maximum
+            )}° </span>
+            <span class="meteo-min"> ${Math.round(
+              day.temperature.minimum
+            )}°</span>
+            </div>`;
+    }
   });
   forecastElement.innerHTML = forecastHTML;
 }
